@@ -21,5 +21,6 @@ module Mumukit
 end
 
 require_relative './content_type/markdown'
+require_relative './content_type/with_markdown'
 require_relative './content_type/plain'
 require_relative './content_type/html'
