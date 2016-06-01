@@ -17,6 +17,8 @@ describe Mumukit::ContentType do
   describe 'markdown' do
     let(:markdown) { Mumukit::ContentType.for(:markdown) }
     it { expect(markdown.to_html('#foo').html_safe?).to be true }
+    it { expect(markdown.to_html("\n| f | x |\n|---|---|\n| x | y |\n")).to eq "<table class=\"table\"><thead>\n<tr>\n<th>f</th>\n<th>x</th>\n</tr>\n</thead><tbody>\n<tr>\n<td>x</td>\n<td>y</td>\n</tr>\n</tbody></table>\n"}
+
   end
 
   describe 'plain' do
