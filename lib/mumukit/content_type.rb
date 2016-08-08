@@ -1,4 +1,4 @@
-require 'active_support/all'
+require 'mumukit/core'
 
 module Mumukit
   module ContentType
