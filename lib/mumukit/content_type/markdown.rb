@@ -24,6 +24,14 @@ module Mumukit::ContentType::Markdown
     "\n```\n#{code}\n```\n\n"
   end
 
+  def self.highlighted_code(language, code)
+    "```#{language}\n#{code}```"
+  end
+
+  def self.inline_code(code)
+    "`#{code}`"
+  end
+
   def self.replace_mu_logo(content)
     mumuki_logo = '<i class="text-primary da da-mumuki"></i>'
     @@markdown
