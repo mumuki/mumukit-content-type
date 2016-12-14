@@ -6,14 +6,6 @@ require 'rouge/plugins/redcarpet'
 module Mumukit::ContentType::Markdown
   extend Mumukit::ContentType::BaseContentType
 
-  def self.title(title)
-    "**#{title}**"
-  end
-
-  def self.code(code)
-    "\n```\n#{code}\n```\n\n"
-  end
-
   class HTML < MdEmoji::Render
     include Rouge::Plugins::Redcarpet
 
@@ -24,8 +16,24 @@ module Mumukit::ContentType::Markdown
 
   @@markdown = Redcarpet::Markdown.new(HTML, autolink: true, fenced_code_blocks: true, no_intra_emphasis: true, tables: true)
 
+  def self.title(title)
+    "**#{title}**"
+  end
+
+  def self.code(code)
+    "\n```\n#{code}\n```\n\n"
+  end
+
+  def self.replace_mu_logo(content)
+    mumuki_logo = '<i class="text-primary da da-mumuki"></i>'
+    @@markdown
+        .render(content)
+        .gsub('<span class="err">ム</span>', mumuki_logo)
+        .gsub('ム', mumuki_logo)
+  end
+
   def self.to_html(content)
-    @@markdown.render(content).html_safe if content
+    replace_mu_logo(content).html_safe if content
   end
 
   def self.name
