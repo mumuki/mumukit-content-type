@@ -9,7 +9,7 @@ module Mumukit
     end
 
     def self.parse(s)
-      Kernel.const_get "Mumukit::ContentType::#{s.to_s.titlecase}"
+      "Mumukit::ContentType::#{s.to_s.titlecase}".constantize
     rescue
       raise "unknown content_type #{s}"
     end
