@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-source 'https://github.com/mumuki/rouge' do
-  gem 'rouge'
-end
+gem 'rouge', git: 'https://github.com/mumuki/rouge', branch: 'master'
 
 gemspec
