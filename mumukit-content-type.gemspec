@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~>2.9'
 
   spec.add_dependency 'redcarpet', '~> 3.3.2'
-  spec.add_dependency 'md_emoji'
+  spec.add_dependency 'md_emoji', '~> 1.0'
   spec.add_dependency 'mumukit-core', '~> 0.1'
 end
