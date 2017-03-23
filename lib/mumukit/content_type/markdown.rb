@@ -25,7 +25,7 @@ module Mumukit::ContentType::Markdown
   end
 
   def self.highlighted_code(language, code)
-    "```#{language}\n#{code}```"
+    "```#{language}\n#{(code.ends_with? "\n") ? code : "#{code}\n"}```"
   end
 
   def self.inline_code(code)
