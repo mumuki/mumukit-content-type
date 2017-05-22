@@ -30,6 +30,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rouge'
   spec.add_dependency 'redcarpet', '~> 3.3.2'
-  spec.add_dependency 'md_emoji'
   spec.add_dependency 'mumukit-core', '~> 1.0'
 end

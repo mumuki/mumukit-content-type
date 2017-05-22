@@ -1,4 +1,3 @@
-require 'md_emoji'
 require 'rouge'
 require 'redcarpet'
 require 'rouge/plugins/redcarpet'
