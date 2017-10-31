@@ -11,6 +11,10 @@ module Mumukit::ContentType::Markdown
     def table(header, body)
       "<table class=\"table\"><thead>\n#{header}</thead><tbody>\n#{body}</tbody></table>\n"
     end
+
+    def link(link, title, content)
+      "<a title=\"#{title}\" href=\"#{link}\" target=\"_blank\">#{content}</a>"
+    end
   end
 
   @@markdown = Redcarpet::Markdown.new(HTML, autolink: true, fenced_code_blocks: true, no_intra_emphasis: true, tables: true)
