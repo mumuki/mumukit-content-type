@@ -16,7 +16,7 @@ module Rouge
                     field variant case if then else switch to repeat while foreach
                     in match)
 
-      atoms = %w(False True Verde Vermelho Azul Preto Norte Sul Leste Oeste)
+      atoms = %w(False True Verde Rojo Vermelho Azul Negro Preto Norte Sur Sul Este Leste Oeste)
 
       state :comments do
         def comment_between(start, finish)
