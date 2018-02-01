@@ -18,6 +18,8 @@ describe Mumukit::ContentType do
     let(:markdown) { Mumukit::ContentType.for(:markdown) }
     it { expect(markdown.to_html('#foo').html_safe?).to be true }
     it { expect(markdown.to_html(':stuck_out_tongue:')).to eq "<p><img src=\"/assets/emojis/stuck_out_tongue.png\" class=\"emoji\" title=\":stuck_out_tongue:\" alt=\":stuck_out_tongue:\" height=\"20\" width=\"20\"></p>\n" }
+    it { expect(markdown.to_html("```ruby\n@x = 1\n```\n")).to include '<span class="vi">@x</span>' }
+    it { expect(markdown.to_html("```gobstones\nprogram {}\n```\n")).to include '<span class="kr">program</span>' }
 
     it { expect(markdown.to_html("\n| f | x |\n|---|---|\n| x | y |\n")).to eq "<table class=\"table\"><thead>\n<tr>\n<th>f</th>\n<th>x</th>\n</tr>\n</thead><tbody>\n<tr>\n<td>x</td>\n<td>y</td>\n</tr>\n</tbody></table>\n" }
     it { expect(markdown.to_html('ム')).to eq "<p><i class=\"text-primary da da-mumuki\"></i></p>\n" }
