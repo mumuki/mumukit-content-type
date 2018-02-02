@@ -21,7 +21,7 @@ module Mumukit
   end
 end
 
-require_relative './content_type/md_emoji'
+require_relative './content_type/emoji'
 require_relative './content_type/markdown'
 require_relative './content_type/with_markdown'
 require_relative './content_type/plain'

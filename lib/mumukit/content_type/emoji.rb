@@ -1,25 +1,9 @@
 #
-# Notice: This file was extracted from https://github.com/elm-city-craftworks/md_emoji
+# Notice: This file is based on https://github.com/elm-city-craftworks/md_emoji, created by
+# Jordan Byron and licensed using a MIT license
 #
-##
-## Copyright (c) 2011 Jordan Byron
-##
-## Permission is hereby granted, free of charge, to any person obtaining a copy of this software
-## and associated documentation files (the "Software"), to deal in the Software without restriction,
-## including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-## and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
-## subject to the following conditions:
-##
-## The above copyright notice and this permission notice shall be included in all copies or substantial
-## portions of the Software.
-##
-## THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
-## NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-## IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-## WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
-## THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-module MdEmoji
+module Mumukit::ContentType::Emoji
   EMOJI = %w{+1 -1 0 1 100 109 1234 2 3 4 5 6 7 8 8ball 9 a ab
   abc abcd accept aerial_tramway airplane alarm_clock alien ambulance
   anchor angel anger angry anguished ant apple aquarius aries arrow_backward
@@ -118,8 +102,7 @@ module MdEmoji
   womens worried wrench x yellow_heart yen yum zap zero zzz}
 end
 
-
-module MdEmoji
+module Mumukit::ContentType::Emoji
   class Render < Redcarpet::Render::HTML
     def initialize(options={})
       @options = options.merge(:no_intra_emphasis => true)
@@ -138,14 +121,14 @@ module MdEmoji
 
     # Replaces valid emoji characters, ie :smile:, with img tags
     #
-    # Valid emoji charaters are listed in +MdEmoji::EMOJI+
+    # Valid emoji charaters are listed in +Mumukit::ContentType::Emoji::EMOJI+
     def replace_emoji(text)
       text.gsub(/:([^\s:])+:/) do |emoji|
 
         emoji_code = emoji #.gsub("|", "_")
         emoji      = emoji_code.gsub(":", "")
 
-        if MdEmoji::EMOJI.include?(emoji)
+        if Mumukit::ContentType::Emoji::EMOJI.include?(emoji)
           file_name    = "#{emoji.gsub('+', 'plus')}.png"
           default_size = %{height="20" width="20"}
 
@@ -164,4 +147,9 @@ module MdEmoji
       text && text[/:\S+:/]
     end
   end
+end
+
+module Mumukit::ContentType::Emoji
+  class Engine < ::Rails::Engine
+  end if defined? ::Rails::Engine
 end

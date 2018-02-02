@@ -20,5 +20,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/mumuki
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-This software also contains MIT code by Jordan Byron, extracted from
+This software also contains MIT code originally developed by Jordan Byron, extracted from
 https://github.com/elm-city-craftworks/md_emoji
+
+
