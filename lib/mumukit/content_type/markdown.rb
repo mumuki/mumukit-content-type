@@ -5,7 +5,7 @@ require 'rouge/plugins/redcarpet'
 module Mumukit::ContentType::Markdown
   extend Mumukit::ContentType::BaseContentType
 
-  class HTML < MdEmoji::Render
+  class HTML < Mumukit::ContentType::Emoji::Render
     include Rouge::Plugins::Redcarpet
 
     def table(header, body)
