@@ -13,7 +13,7 @@ module Rouge
       end
 
       reserved = %w(program interactive is return record
-                    field variant case if then else switch to repeat while foreach
+                    field variant case if then else elseif switch to repeat while foreach
                     in match)
 
       atoms = %w(False True Verde Rojo Vermelho Azul Negro Preto Norte Sur Sul Este Leste Oeste)
