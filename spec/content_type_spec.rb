@@ -18,7 +18,7 @@ describe Mumukit::ContentType do
     let(:markdown) { Mumukit::ContentType.for(:markdown) }
     it { expect(markdown.to_html('#foo').html_safe?).to be true }
     it { expect(markdown.to_html('foo :stuck_out_tongue: bar')).to eq %Q{<p>foo <i class="mu-emoji people _1f61b" title="stuck_out_tongue" alt="stuck_out_tongue" height="24" width="24"></i> bar</p>\n} }
-    it { expect(markdown.to_html('foo :breast_feeding: bar')).to eq %Q{<p>foo <i class="mu-emoji activity _1f61b" title="stuck_out_tongue" alt="stuck_out_tongue" height="24" width="24"></i> bar</p>\n} }
+    it { expect(markdown.to_html('foo :breast_feeding: bar')).to eq %Q{<p>foo <i class="mu-emoji activity _1f931" title="breast_feeding" alt="breast_feeding" height="24" width="24"></i> bar</p>\n} }
     it { expect(markdown.to_html("```ruby\n@x = 1\n```\n")).to include '<span class="vi">@x</span>' }
     it { expect(markdown.to_html("```gobstones\nprogram {}\n```\n")).to include '<span class="kr">program</span>' }
 
