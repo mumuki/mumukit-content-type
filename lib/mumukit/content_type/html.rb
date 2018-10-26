@@ -9,8 +9,8 @@ module Mumukit::ContentType::Html
     "<pre>#{code}</pre>"
   end
 
-  def self.to_html(content)
-    content.html_safe if content
+  def self.htmlize(content)
+    content
   end
 
   def self.name

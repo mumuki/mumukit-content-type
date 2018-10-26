@@ -43,8 +43,8 @@ module Mumukit::ContentType::Markdown
         .gsub('ム', mumuki_logo)
   end
 
-  def self.to_html(content)
-    replace_mu_logo(content).html_safe if content
+  def self.htmlize(content)
+    replace_mu_logo(content) if content
   end
 
   def self.name
