@@ -12,6 +12,7 @@ describe Mumukit::ContentType do
     let(:html) { Mumukit::ContentType.for(:html) }
     it { expect(html.to_html('<h1>foo</h1>').html_safe?).to be true }
     it { expect(html.to_html('<pre>foo</pre>')).to eq '<pre>foo</pre>' }
+    it { expect(html.to_html('<script></script>')).to eq '' }
   end
 
   describe 'markdown' do
@@ -25,6 +26,7 @@ describe Mumukit::ContentType do
     it { expect(markdown.to_html('ム')).to eq "<p><i class=\"text-primary da da-mumuki\"></i></p>\n" }
     it { expect(markdown.to_html("ム foo\nム bar\n")).to_not include "ム" }
     it { expect(markdown.to_html('[this is a link somewhere with a title](http://www.somewhere.com "title here")')).to eq "<p><a title=\"title here\" href=\"http://www.somewhere.com\" target=\"_blank\">this is a link somewhere with a title</a></p>\n"}
+    it { expect(markdown.to_html('<script></script>')).to eq "\n" }
   end
 
   describe 'highlighted_code' do
@@ -37,6 +39,7 @@ describe Mumukit::ContentType do
     it { expect(plain.to_html('foo').html_safe?).to be true }
     it { expect(plain.to_html('foo')).to eq '<pre>foo</pre>' }
     it { expect(plain.to_html('x < 5 && x > 0')).to eq '<pre>x &lt; 5 &amp;&amp; x &gt; 0</pre>' }
+    it { expect(plain.to_html('<script></script>')).to eq '<pre>&lt;script&gt;&lt;/script&gt;</pre>' }
   end
 
 
