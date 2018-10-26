@@ -2,14 +2,17 @@ require 'sanitize'
 
 module Mumukit::ContentType::Sanitizer
   class << self
-    class_attribute :allowed_elements, :allowed_attributes
+    class_attribute :should_sanitize, :allowed_elements, :allowed_attributes
 
+    self.should_sanitize = false
     self.allowed_elements = []
     self.allowed_attributes = {
         'a' => Sanitize::Config::RELAXED[:attributes]['a'] + ['target']
     }
 
     def sanitize(html)
+      return html unless should_sanitize?
+
       Sanitize.fragment(html, sanitization_settings)
     end
 
