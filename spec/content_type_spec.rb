@@ -2,6 +2,8 @@ require_relative './spec_helper'
 
 describe Mumukit::ContentType do
 
+  before { Mumukit::ContentType::Sanitizer.should_sanitize = true }
+
   it { expect(Mumukit::ContentType.parse(:plain)).to eq Mumukit::ContentType::Plain }
   it { expect(Mumukit::ContentType.parse(:markdown)).to eq Mumukit::ContentType::Markdown }
   it { expect(Mumukit::ContentType.parse(:html)).to eq Mumukit::ContentType::Html }
