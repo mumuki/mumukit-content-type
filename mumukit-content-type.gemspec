@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rouge', '~> 3.1'
   spec.add_dependency 'redcarpet', '~> 3.3.2'
   spec.add_dependency 'mumukit-core', '~> 1.0'
+  spec.add_dependency 'sanitize', '~> 5.0'
 end
