@@ -9,7 +9,7 @@ module Mumukit
       end
 
       def to_html(content)
-        Mumukit::ContentType::Sanitizer.sanitize(htmlize content).html_safe
+        Mumukit::ContentType::Sanitizer.sanitize(htmlize content)&.html_safe
       end
     end
 
