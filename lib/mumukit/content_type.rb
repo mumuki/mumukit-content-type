@@ -11,6 +11,14 @@ module Mumukit
       def to_html(content)
         Mumukit::ContentType::Sanitizer.sanitize(htmlize content)&.html_safe
       end
+
+      def to_s
+        name
+      end
+
+      def as_json(_options={})
+        name
+      end
     end
 
     def self.parse(s)

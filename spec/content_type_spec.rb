@@ -8,6 +8,14 @@ describe Mumukit::ContentType do
   it { expect(Mumukit::ContentType.parse(:markdown)).to eq Mumukit::ContentType::Markdown }
   it { expect(Mumukit::ContentType.parse(:html)).to eq Mumukit::ContentType::Html }
 
+  it { expect(Mumukit::ContentType::Plain.to_s).to eq 'plain' }
+  it { expect(Mumukit::ContentType::Markdown.to_s).to eq 'markdown' }
+  it { expect(Mumukit::ContentType::Html.to_s).to eq 'html' }
+
+  it { expect(Mumukit::ContentType::Plain.as_json).to eq 'plain' }
+  it { expect(Mumukit::ContentType::Markdown.as_json).to eq 'markdown' }
+  it { expect(Mumukit::ContentType::Html.as_json).to eq 'html' }
+
   let(:exception) { OpenStruct.new(message: 'foo', backtrace: ['l1', 'l2']) }
 
   describe 'html' do
