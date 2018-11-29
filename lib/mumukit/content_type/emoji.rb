@@ -11,10 +11,11 @@ module Mumukit::ContentType::Emoji
   arrow_heading_down arrow_heading_up arrow_left arrow_lower_left arrow_lower_right
   arrow_right arrow_right_hook arrow_up arrow_up_down arrow_up_small arrow_upper_left
   arrow_upper_right arrows_clockwise arrows_counterclockwise art articulated_lorry
-  astonished atm b baby baby_bottle baby_chick baby_symbol baggage_claim balloon
+  astonished atm b baby baby_bottle baby_chick baby_symbol back baggage_claim balloon
   ballot_box_with_check bamboo banana bangbang bank bar_chart barber baseball
-  basketball bath bathtub battery bear beer beers beetle beginner bell bento
-  bicyclist bike bikini bird birthday black_circle black_joker black_nib black_square
+  basketball bath bathtub battery bear bee beer beers beetle beginner bell bento
+  bicyclist bike bikini bird birthday black_circle black_joker black_medium_small_square
+  black_medium_square black_nib black_small_square black_square
   black_square_button blossom blowfish blue_book blue_car blue_heart blush boar
   boat bomb book bookmark bookmark_tabs books boom boot bouquet bow bowling bowtie
   boy bread bride_with_veil bridge_at_night briefcase broken_heart bug bulb bullettrain_front
@@ -28,10 +29,10 @@ module Mumukit::ContentType::Emoji
   clock930 closed_book closed_lock_with_key closed_umbrella cloud clubs cn cocktail coffee
   cold_sweat collision computer confetti_ball confounded confused congratulations construction
   construction_worker convenience_store cookie cool cop copyright corn couple couple_with_heart
-  couplekiss cow cow2 credit_card crocodile crossed_flags crown cry crying_cat_face crystal_ball
+  couplekiss cow cow2 credit_card crescent_moon crocodile crossed_flags crown cry crying_cat_face crystal_ball
   cupid curly_loop currency_exchange curry custard customs cyclone dancer dancers dango dart dash
   date de deciduous_tree department_store diamond_shape_with_a_dot_inside diamonds disappointed
-  disappointed_relieved dizzy dizzy_face do_not_litter dog dog2 dollar dolls dolphin door doughnut
+  disappointed_relieved dizzy dizzy_face do_not_litter dog dog2 dollar dolls dolphin donut door doughnut
   dragon dragon_face dress dromedary_camel droplet dvd e-mail ear ear_of_rice earth_africa
   earth_americas earth_asia egg eggplant egplant eight eight_pointed_black_star eight_spoked_asterisk
   electric_plug elephant email end envelope es euro european_castle european_post_office
@@ -66,7 +67,7 @@ module Mumukit::ContentType::Emoji
   no_mobile_phones no_mouth no_pedestrians no_smoking non-potable_water nose notebook
   notebook_with_decorative_cover notes nut_and_bolt o o2 ocean octocat octopus oden office ok ok_hand
   ok_woman older_man older_woman on oncoming_automobile oncoming_bus oncoming_police_car oncoming_taxi
-  one open_file_folder open_hands open_mouth ophiuchus orange_book outbox_tray ox page_facing_up
+  one open_file_folder open_hands open_mouth ophiuchus orange_book outbox_tray ox package page_facing_up
   page_with_curl pager palm_tree panda_face paperclip parking part_alternation_mark partly_sunny
   passport_control paw_prints peach pear pencil pencil2 penguin pensive performing_arts persevere
   person_frowning person_with_blond_hair person_with_pouting_face phone pig pig2 pig_nose pill
@@ -79,11 +80,11 @@ module Mumukit::ContentType::Emoji
   roller_coaster rooster rose rotating_light round_pushpin rowboat ru rugby_football runner running
   running_shirt_with_sash sa sagittarius sailboat sake sandal santa satellite satisfied saxophone
   school school_satchel scissors scorpius scream scream_cat scroll seat secret see_no_evil
-  seedling seven shaved_ice sheep shell ship shipit shirt shit shoe shower signal_strength six
+  seedling seven shaved_ice sheep shell ship shipit shirt shit shoe shower signal_strength simple_smile six
   six_pointed_star ski skull sleeping sleepy slot_machine small_blue_diamond small_orange_diamond
   small_red_triangle small_red_triangle_down smile smile_cat smiley smiley_cat smiling_imp smirk
   smirk_cat smoking snail snake snowboarder snowflake snowman sob soccer soon sos sound space_invader
-  spades spaghetti sparkler sparkles sparkling_heart speak_no_evil speaker speech_balloon speedboat
+  spades spaghetti sparkle sparkler sparkles sparkling_heart speak_no_evil speaker speech_balloon speedboat
   squirrel star star2 stars station statue_of_liberty steam_locomotive stew straight_ruler strawberry
   stuck_out_tongue stuck_out_tongue_closed_eyes stuck_out_tongue_winking_eye sun_with_face sunflower
   sunglasses sunny sunrise sunrise_over_mountains surfer sushi suspect suspension_railway sweat
@@ -97,7 +98,8 @@ module Mumukit::ContentType::Emoji
   underage unlock up us v vertical_traffic_light vhs vibration_mode video_camera video_game
   violin virgo volcano vs walking waning_crescent_moon waning_gibbous_moon warning watch
   water_buffalo watermelon wave wavy_dash waxing_crescent_moon waxing_gibbous_moon wc weary
-  wedding whale whale2 wheelchair white_check_mark white_circle white_flower white_square
+  wedding whale whale2 wheelchair white_check_mark white_circle white_flower white_large_square white_medium_small_square
+  white_medium_square white_small_square white_square
   white_square_button wind_chime wine_glass wink wink2 wolf woman womans_clothes womans_hat
   womens worried wrench x yellow_heart yen yum zap zero zzz}
 end
