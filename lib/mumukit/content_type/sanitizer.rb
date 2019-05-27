@@ -27,7 +27,8 @@ module Mumukit::ContentType::Sanitizer
       {
           elements: Sanitize::Config::RELAXED[:elements] + allowed_elements,
           attributes: allowed_attributes,
-          transformers: transformers
+          transformers: transformers,
+          allow_comments: true
       }
     end
   end
