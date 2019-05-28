@@ -8,8 +8,10 @@ module Mumukit
         "#{title e.message}\n#{code e.backtrace.join("\n")}"
       end
 
-      def to_html(content)
-        Mumukit::ContentType::Sanitizer.sanitize(htmlize content)&.html_safe
+      def to_html(content, options={})
+        content_html = htmlize content
+        content_html = Mumukit::ContentType::Sanitizer.sanitize(content_html) unless options[:skip_sanitization]
+        content_html&.html_safe
       end
 
       def to_s
