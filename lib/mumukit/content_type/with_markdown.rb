@@ -1,5 +1,5 @@
 class Module
-  def markdown_on(*selectors, options: {})
+  def markdown_on(*selectors, **options)
     selectors.each { |selector| _define_markdown_on(selector, options) }
   end
 
