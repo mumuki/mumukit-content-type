@@ -27,7 +27,7 @@ module Mumukit::ContentType::Emoji
         short_code = short_name.gsub(':', '')
         if emojis.include?(short_code)
           emoji = emojis[short_code]
-          %{<i class="mu-emoji #{emoji['ca']} _#{emoji['co']}" title="#{emoji['name']}" alt="#{emoji['name']}"></i>}
+          %{<i class="mu-emoji #{emoji['ca']} _#{emoji['co']}" title="#{short_name}"></i>}
         else
           short_code
         end
