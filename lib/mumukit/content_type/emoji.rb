@@ -22,14 +22,13 @@ module Mumukit::ContentType::Emoji
     # Valid emoji charaters are listed in +Mumukit::ContentType::Emoji::EMOJI+
     def replace_emoji(text)
       emojis = Mumuki::Emojis::EMOJIS
-      short_names = emojis.keys.join('|').gsub('+', '\+')
-      text.gsub(/:(#{short_names}):/) do |short_name|
+      text.gsub(/:([^\s:])+:/) do |short_name|
         short_code = short_name.gsub(':', '')
-        if emojis.include?(short_code)
-          emoji = emojis[short_code]
+        emoji = emojis[short_code]
+        if emoji
           %{<i class="mu-emoji #{emoji['ca']} _#{emoji['co']}" title="#{short_name}"></i>}
         else
-          short_code
+          short_name
         end
       end
     end
