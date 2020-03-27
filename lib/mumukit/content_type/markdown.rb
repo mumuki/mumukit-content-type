@@ -17,7 +17,18 @@ module Mumukit::ContentType::Markdown
     end
   end
 
-  @@markdown = Redcarpet::Markdown.new(HTML, autolink: true, fenced_code_blocks: true, no_intra_emphasis: true, tables: true)
+  class OneLinerHTML < HTML
+    def paragraph(text)
+      text
+    end
+  end
+
+  def self.new_markdown(renderer)
+    Redcarpet::Markdown.new(renderer, autolink: true, fenced_code_blocks: true, no_intra_emphasis: true, tables: true)
+  end
+
+  @@markdown = new_markdown HTML
+  @@one_liner_markdown = new_markdown OneLinerHTML
 
   def self.title(title)
     "**#{title}**"
@@ -35,16 +46,20 @@ module Mumukit::ContentType::Markdown
     "`#{code}`"
   end
 
-  def self.replace_mu_logo(content)
+  def self.render_replacing_mu_logo(content, renderer)
     mumuki_logo = '<i class="text-primary da da-mumuki"></i>'
-    @@markdown
+    renderer
         .render(content)
         .gsub('<span class="err">ム</span>', mumuki_logo)
         .gsub('ム', mumuki_logo)
   end
 
-  def self.htmlize(content)
-    replace_mu_logo(content) if content
+  def self.htmlize(content, options)
+    render_replacing_mu_logo(content, renderer_for(options)) if content
+  end
+
+  def self.renderer_for(options)
+    options[:one_liner] ? @@one_liner_markdown : @@markdown
   end
 
   def self.name

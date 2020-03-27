@@ -9,7 +9,7 @@ module Mumukit::ContentType::Html
     "<pre>#{code}</pre>"
   end
 
-  def self.htmlize(content)
+  def self.htmlize(content, _options)
     content
   end
 

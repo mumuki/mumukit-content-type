@@ -37,6 +37,9 @@ describe Mumukit::ContentType do
     it { expect(markdown.to_html("ム foo\nム bar\n")).to_not include "ム" }
     it { expect(markdown.to_html('[this is a link somewhere with a title](http://www.somewhere.com "title here")')).to eq "<p><a title=\"title here\" href=\"http://www.somewhere.com\" target=\"_blank\">this is a link somewhere with a title</a></p>\n" }
     it { expect(markdown.to_html('<script></script>')).to eq "\n" }
+
+    it { expect(markdown.to_html('hello `code`')).to eq "<p>hello <code>code</code></p>\n" }
+    it { expect(markdown.to_html('hello `code`', one_liner: true)).to eq "hello <code>code</code>" }
   end
 
   describe 'highlighted_code' do

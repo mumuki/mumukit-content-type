@@ -9,7 +9,7 @@ module Mumukit
       end
 
       def to_html(content, options={})
-        content_html = htmlize content
+        content_html = htmlize content, options
         content_html = Mumukit::ContentType::Sanitizer.sanitize(content_html) unless options[:skip_sanitization]
         content_html&.html_safe
       end
