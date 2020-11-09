@@ -65,4 +65,8 @@ module Mumukit::ContentType::Markdown
   def self.name
     'markdown'
   end
+
+  def self.enumerate(items)
+    items.map { |it| "* #{it}" }.join("\n")
+  end
 end
