@@ -16,4 +16,17 @@ module Mumukit::ContentType::Html
   def self.name
     'html'
   end
+
+  def self.enumerate(items)
+    add_list_tags(items) unless items.empty?
+    items.join("\n")
+  end
+
+  private
+
+  def self.add_list_tags(items)
+    items.map! { |it| "<li>#{it}</li>" }
+    items.prepend '<ul>'
+    items.append '</ul>'
+  end
 end
