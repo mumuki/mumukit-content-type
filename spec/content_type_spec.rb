@@ -63,6 +63,11 @@ describe Mumukit::ContentType do
     it { expect(plain.to_html('foo')).to eq '<pre>foo</pre>' }
     it { expect(plain.to_html('x < 5 && x > 0')).to eq '<pre>x &lt; 5 &amp;&amp; x &gt; 0</pre>' }
     it { expect(plain.to_html('<script></script>')).to eq '<pre>&lt;script&gt;&lt;/script&gt;</pre>' }
+
+    context '.enumerate' do
+      it { expect(plain.enumerate(['Should do this', 'Should do that'])).to eq "Should do this\nShould do that" }
+      it { expect(plain.enumerate([])).to eq '' }
+    end
   end
 
 

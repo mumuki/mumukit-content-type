@@ -16,4 +16,8 @@ module Mumukit::ContentType::Plain
   def self.name
     'plain'
   end
+
+  def self.enumerate(items)
+    items.join("\n")
+  end
 end
