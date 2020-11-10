@@ -23,6 +23,11 @@ describe Mumukit::ContentType do
     it { expect(html.to_html('<h1>foo</h1>').html_safe?).to be true }
     it { expect(html.to_html('<pre>foo</pre>')).to eq '<pre>foo</pre>' }
     it { expect(html.to_html('<script></script>')).to eq '' }
+
+    context '.enumerate' do
+      it { expect(html.enumerate(['Should do this', 'Should do that'])).to eq "<ul>\n<li>Should do this</li>\n<li>Should do that</li>\n</ul>" }
+      it { expect(html.enumerate([])).to eq '' }
+    end
   end
 
   describe 'markdown' do
@@ -40,6 +45,11 @@ describe Mumukit::ContentType do
 
     it { expect(markdown.to_html('hello `code`')).to eq "<p>hello <code>code</code></p>\n" }
     it { expect(markdown.to_html('hello `code`', one_liner: true)).to eq "hello <code>code</code>" }
+
+    context '.enumerate' do
+      it { expect(markdown.enumerate(['Should do this', 'Should do that'])).to eq "* Should do this\n* Should do that" }
+      it { expect(markdown.enumerate([])).to eq '' }
+    end
   end
 
   describe 'highlighted_code' do
@@ -53,6 +63,11 @@ describe Mumukit::ContentType do
     it { expect(plain.to_html('foo')).to eq '<pre>foo</pre>' }
     it { expect(plain.to_html('x < 5 && x > 0')).to eq '<pre>x &lt; 5 &amp;&amp; x &gt; 0</pre>' }
     it { expect(plain.to_html('<script></script>')).to eq '<pre>&lt;script&gt;&lt;/script&gt;</pre>' }
+
+    context '.enumerate' do
+      it { expect(plain.enumerate(['Should do this', 'Should do that'])).to eq "Should do this\nShould do that" }
+      it { expect(plain.enumerate([])).to eq '' }
+    end
   end
 
 
