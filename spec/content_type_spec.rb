@@ -37,6 +37,9 @@ describe Mumukit::ContentType do
     it { expect(markdown.to_html("```ruby\n@x = 1\n```\n")).to include '<span class="vi">@x</span>' }
     it { expect(markdown.to_html("```gobstones\nprogram {}\n```\n")).to include '<span class="kr">program</span>' }
 
+    it { expect(markdown.to_html("```python\ndef x():\n  return 1```\n")).to include '<span class="k">return</span>' }
+    it { expect(markdown.to_html("```python3\ndef x():\n  return 1```\n")).to include '<span class="k">return</span>' }
+
     it { expect(markdown.to_html("\n| f | x |\n|---|---|\n| x | y |\n")).to eq "<table class=\"table\"><thead>\n<tr>\n<th>f</th>\n<th>x</th>\n</tr>\n</thead><tbody>\n<tr>\n<td>x</td>\n<td>y</td>\n</tr>\n</tbody></table>\n" }
     it { expect(markdown.to_html('ム')).to eq "<p><i class=\"text-primary da da-mumuki\"></i></p>\n" }
     it { expect(markdown.to_html("ム foo\nム bar\n")).to_not include "ム" }
