@@ -24,7 +24,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rouge', '~> 3.1'
   spec.add_dependency 'redcarpet', '~> 3.3'
-  spec.add_dependency 'mumukit-core', '~> 1.0'
+  spec.add_dependency 'mumukit-core', '~> 1.19'
   spec.add_dependency 'sanitize', '~> 6.0'
   spec.add_dependency 'mumuki-emojis', '~> 1.0'
+
+  spec.required_ruby_version = '>= 2.7'
 end
